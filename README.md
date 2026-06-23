@@ -15,7 +15,7 @@ Pi (Flask) → file on disk
 Gallery UI stays on `droseragallery.netlify.app`. Uploads and admin API calls
 still use `canopyserver.alurellc.com` directly.
 
-Full operator guide: [gallery-app READMES/GALLERY_MEDIA_HOST_README.md](../gallery-app/READMES/GALLERY_MEDIA_HOST_README.md)
+Operator guide (monorepo): `canopysystemsui/gallery-app/READMES/GALLERY_MEDIA_HOST_README.md`
 
 ---
 
