@@ -1,0 +1,17 @@
+# Africandrosera gallery image host — Netlify proxy to Pi Flask API.
+# Deploy as site name "africandrosera" → https://africandrosera.netlify.app
+
+[build]
+  publish = "public"
+  command = "echo 'africandrosera-media-proxy: static publish only'"
+
+[[redirects]]
+  from = "/api/gallery/files/*"
+  to = "https://canopyserver.alurellc.com/api/gallery/files/:splat"
+  status = 200
+  force = true
+
+[[headers]]
+  for = "/api/gallery/files/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
