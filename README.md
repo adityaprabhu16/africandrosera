@@ -35,6 +35,8 @@ In the monorepo this repo is the **`africandrosera/`** git submodule (sibling of
 
 No environment variables required on this site.
 
+Push from monorepo root: `./scripts/push-africandrosera.sh -m "your message"`
+
 ---
 
 ## Enable branded image URLs
