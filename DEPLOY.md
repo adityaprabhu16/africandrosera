@@ -18,7 +18,7 @@ environment — create the GitHub repo manually (one time), then push.
 ## 2. Push from your Mac
 
 ```bash
-cd /Users/adityaprabhu/Projects/canopysystemsui/gallery-media-proxy
+cd /Users/adityaprabhu/Projects/canopysystemsui/africandrosera
 
 git remote add origin https://github.com/adityaprabhu16/africandrosera.git
 git branch -M main

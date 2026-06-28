@@ -14,4 +14,4 @@
 [[headers]]
   for = "/api/gallery/files/*"
   [headers.values]
-    Cache-Control = "public, max-age=86400"
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=604800"

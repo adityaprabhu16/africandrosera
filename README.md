@@ -17,6 +17,9 @@ still use `canopyserver.alurellc.com` directly.
 
 Operator guide (monorepo): `canopysystemsui/gallery-app/READMES/GALLERY_MEDIA_HOST_README.md`
 
+In the monorepo this repo is the **`africandrosera/`** git submodule (sibling of
+`gallery-app`, `gallery-backend`).
+
 ---
 
 ## Deploy on Netlify
