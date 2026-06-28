@@ -11,6 +11,9 @@
   status = 200
   force = true
 
+# NOTE: [[headers]] below do NOT apply to proxied responses (Netlify docs).
+# Edge cache is driven by Cache-Control from gallery_app on the Pi — see
+# gallery-backend gallery_routes.py (GALLERY_FILE_CACHE_CONTROL).
 [[headers]]
   for = "/api/gallery/files/*"
   [headers.values]

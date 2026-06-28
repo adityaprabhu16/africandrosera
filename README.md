@@ -47,7 +47,11 @@ After Netlify deploy succeeds:
 GALLERY_PUBLIC_BASE="https://africandrosera.netlify.app"
 ```
 
-Restart Flask/gunicorn.
+Restart `gallery_app`:
+
+```bash
+sudo systemctl restart gallery_app
+```
 
 **Netlify `droseragallery` env:**
 
@@ -65,10 +69,24 @@ curl -I "https://africandrosera.netlify.app/api/gallery/files/species/<slug>/<fi
 
 ---
 
-## Latency
+## Latency and edge cache
 
-- **First load** of each image: ~100–400 ms extra (Netlify fetches from Pi).
-- **Repeat loads:** cached at Netlify edge (24h `Cache-Control`).
+- **First load** of each image URL: Netlify fetches from Pi via `canopyserver`
+  (~100–400 ms extra vs direct tunnel).
+- **Repeat loads:** cached at Netlify edge for **24 hours** when `gallery_app`
+  returns:
+
+  `Cache-Control: public, max-age=86400, stale-while-revalidate=604800`
+
+  (set in `gallery-backend` `gallery_routes.py` — not from `netlify.toml` headers,
+  which do not apply to proxied paths).
+
+Verify after Pi deploy + second request:
+
+```bash
+curl -I "https://africandrosera.netlify.app/api/gallery/files/<path>.jpg"
+# cache-status: "Netlify Edge"; hit  (on repeat)
+```
 
 ---
 
